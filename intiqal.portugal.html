@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>خطة الانتقال الى البرتغال</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        h1 {
+            color: #4CAF50;
+        }
+
+        table {
+            margin: 20px auto;
+            border-collapse: collapse;
+            width: 80%;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: right; /* Adjust text alignment for Arabic */
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        td:empty::after {
+            content: "violate";
+            color: red;
+        }
+
+        .buttons {
+            margin-top: 20px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            margin: 5px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>خطة الانتقال الى البرتغال</h1>
+    <h1>   ترك - اقامة - سكن - جامعة- سيارة -عمل - اوراق    </h1>
+    <table> 
+        <thead>
+            <tr>
+                <th>الخطوة</th>
+                <th>الوصف</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>١- خطة ترك الشركة و الاستقالة</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>٢- خطة شراء الاقامة</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>٣- خطة سكن البرتغال</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>٤- خطة جامعة البرتغال</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>٥- خطة سيارة البرتغال</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>٦- خطة عمل في البرتغال</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>٧- خطة اوراق البرتغال</td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="buttons">
+        <button onclick="sendWhatsApp()">إرسال عبر الواتساب</button>
+        <button onclick="copyContent()">نسخ المحتوى</button>
+        <button onclick="window.print()">طباعة</button>
+    </div>
+    
+    <script>
+        function sendWhatsApp() {
+            const tableContent = document.querySelector('table').outerHTML;
+            const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(tableContent)}`;
+            window.open(whatsappUrl, '_blank');
+        }
+
+        function copyContent() {
+            const tableContent = document.querySelector('table').outerHTML;
+            const textarea = document.createElement('textarea');
+            textarea.value = tableContent;
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textarea);
+            alert('تم نسخ المحتوى');
+        }
+    </script>
+</body>
+</html>
